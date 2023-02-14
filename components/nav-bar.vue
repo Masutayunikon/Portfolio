@@ -3,7 +3,7 @@
     <a href="#" class="logo"></a>
     <div class="nav-links" ref="nav_links">
       <ul>
-        <li><nuxt-link to="#">Moi</nuxt-link></li>
+        <li><nuxt-link to="/">Moi</nuxt-link></li>
         <li><nuxt-link to="/blog">Blog</nuxt-link></li>
       </ul>
     </div>

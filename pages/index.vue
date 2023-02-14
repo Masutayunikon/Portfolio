@@ -151,6 +151,7 @@ const test = () => {
         padding: 0.5rem;
       }
       .description {
+        padding-left: 1rem;
         font-size: 1.5rem;
         color: white;
       }
