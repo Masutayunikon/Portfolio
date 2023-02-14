@@ -140,7 +140,7 @@ const test = () => {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding-right: 1em;
+      padding-right: 4em;
       align-items: center;
       font-size: 1rem;
       text-align: center;
@@ -151,7 +151,6 @@ const test = () => {
         padding: 0.5rem;
       }
       .description {
-        padding-left: 1rem;
         font-size: 1.5rem;
         color: white;
       }
