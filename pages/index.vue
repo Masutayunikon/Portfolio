@@ -5,7 +5,7 @@
         <img src="/images/profile.jpg" alt="profile" class="profile__image">
       </div>
       <div class="profile__description">
-        <span class="name">Qui sui-je?</span>
+        <span class="name">Qui suis-je?</span>
         <span class="description">Je suis actuellement en troisième année à Epitech, et mon objectif est de devenir un développeur fullstack. J'ai des compétences en développement web, avec une connaissance des langages de programmation populaires. </span>
       </div>
     </div>
@@ -37,8 +37,8 @@
       </div>
       <UnderlineText line-height="0.3rem" line-color="red" text="Contacts" text-color="white" />
       <div class="container__icons">
-        <TextIcon name="skill-icons:discord" text="Discord" spacing="1rem" :after="true" :is-link="true" link="https://discordapp.com/users/MyNameIsBanana#9537"/>
-        <TextIcon style="fill: white" name="icon-park:github" text="Github" spacing="1rem" :after="true" :is-link="true" link="https://github.com/Masutayunikon/Masutayunikon"/>
+        <TextIcon name="skill-icons:discord" text="Discord" spacing="1rem" :after="true" :is-link="true" link="https://discordapp.com/users/1074095235803656302"/>
+        <TextIcon style="fill: white" name="icon-park:github" text="Github" spacing="1rem" :after="true" :is-link="true" link="https://github.com/Masutayunikon"/>
         <TextIcon name="logos:google-gmail" text="Gmail" link="quentinmail974@gmail.com" spacing="1rem" :after="true" :is-link="true" :is-mail="true" />
         <TextIcon name="vscode-icons:file-type-outlook" text="Outlook" link="quentin.robert@epitech.eu" spacing="1rem" :after="true" :is-link="true" :is-mail="true" />
       </div>
