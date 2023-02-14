@@ -83,10 +83,10 @@ const test = () => {
 
 .container {
   .container__icons {
-    display: grid;
-    // auto grid
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-gap: 1rem;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
     padding: 1rem 0;
     flex-wrap: wrap;
     margin-bottom: 1rem;
@@ -94,8 +94,7 @@ const test = () => {
   }
 
   .container__projects {
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)) !important;
-    justify-items: center;
+    width: 100%;
   }
 
   font-family: 'Poppins',ui-monospace;
@@ -106,6 +105,8 @@ const test = () => {
     background-color: rgba(0, 0, 0, 0.4);
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     padding: 1rem 1rem 5rem 1rem;
     box-sizing: border-box;
