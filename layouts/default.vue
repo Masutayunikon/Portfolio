@@ -14,7 +14,7 @@
 main {
   width: 100vw;
   height: 100vh;
-  background-image: url("../public/images/background.jpg");
+  background-image: url("../images/background.webp");
   background-size: cover;
   overflow-y: scroll;
   overflow-x: hidden;

@@ -48,10 +48,19 @@
 
 <script setup lang="ts">
 
-import UnderlineText from "~/components/underline-text.vue";
-import TextIcon from "~/components/text-icon.vue";
-import GithubProject from "~/components/github-project.vue";
-
+useHead({
+  title: 'Quentin Robert - Portfolio - Home',
+  meta: [
+    {
+      name: 'description',
+      content: 'Portfolio de Quentin Robert'
+    },
+    {
+      name: 'keywords',
+      content: 'portfolio, quentin, robert, masutayunikon, epitech, epitech la réunion, développeur, web, fullstack, front, back, front-end, back-end, javascript, vuejs, nuxtjs, nodejs, php, html, css, scss, c, c++, blender, threejs, github, gitlab, discord, gmail, outlook'
+    }
+  ]
+})
 
 const repositories = await fetch('https://api.github.com/users/Masutayunikon/repos', {
   method: 'GET',

@@ -3,11 +3,11 @@
     <a href="#" class="logo"></a>
     <div class="nav-links" ref="nav_links">
       <ul>
-        <li><nuxt-link to="/">Moi</nuxt-link></li>
-        <li><nuxt-link to="/blog">Blog</nuxt-link></li>
+        <li @click="toggleIfActive"><nuxt-link to="/">Moi</nuxt-link></li>
+        <li @click="toggleIfActive"><nuxt-link to="/blog">Blog</nuxt-link></li>
       </ul>
     </div>
-    <fa :icon="icon" class="white button__menu" @click="toggleMenu"/>
+    <Icon :name="icon" class="white button__menu" @click="toggleMenu"/>
   </nav>
 </template>
 
@@ -17,14 +17,20 @@ import {Ref} from "@vue/reactivity";
 
 const nav_links: Ref = ref(null);
 
-const icon = ref("bars");
+const icon = ref("fa6-solid:bars");
+
+const toggleIfActive = () => {
+  if (nav_links.value.classList.contains("active")) {
+    toggleMenu();
+  }
+};
 
 const toggleMenu = () => {
 
   if (!nav_links.value) return;
 
   nav_links.value.classList.toggle("active");
-  icon.value = icon.value === "bars" ? "times" : "bars";
+  icon.value = icon.value === "fa6-solid:bars" ? "ic:baseline-close" : "fa6-solid:bars";
 
 };
 

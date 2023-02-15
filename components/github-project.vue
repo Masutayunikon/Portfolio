@@ -13,7 +13,7 @@
 
 interface Props {
   name: string;
-  description: string;
+  description: string | null;
   language: string;
   updated_at: string;
   html_url: string;
