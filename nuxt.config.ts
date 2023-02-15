@@ -13,6 +13,9 @@ export default defineNuxtConfig({
 
     nitro: {
         compressPublicAssets: true,
+        routeRules: {
+            "/_nuxt/**": { headers: { "cache-control": "max-age=31536000" } }, // Set generated files cache to 1 year
+        },
     },
 
 
