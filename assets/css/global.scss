@@ -1,7 +1,9 @@
 @font-face {
   font-family: "Distort";
+  font-style: normal;
   src: local("Distort"),
   url(/assets/font/DistortYouALesson.ttf) format("truetype");
+  font-display: swap;
 }
 
 body {
