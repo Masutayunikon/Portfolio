@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar">
-    <a href="#" class="logo"></a>
+    <div class="logo"/>
     <div class="nav-links" ref="nav_links">
       <ul>
         <li @click="toggleIfActive"><nuxt-link to="/">Moi</nuxt-link></li>

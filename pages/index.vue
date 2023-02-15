@@ -50,6 +50,9 @@
 
 useHead({
   title: 'Quentin Robert - Portfolio - Home',
+  htmlAttrs: {
+    lang: 'fr'
+  },
   meta: [
     {
       name: 'description',
