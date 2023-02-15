@@ -67,10 +67,6 @@ useHead({
   ],
 })
 
-definePageMeta({
-  middleware: ['cache-control']
-})
-
 const repositories = await fetch('https://api.github.com/users/Masutayunikon/repos', {
   method: 'GET',
   headers: {
