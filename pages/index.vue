@@ -48,6 +48,8 @@
 
 <script setup lang="ts">
 
+import {definePageMeta} from "#imports";
+
 useHead({
   title: 'Quentin Robert - Portfolio - Home',
   htmlAttrs: {
@@ -62,7 +64,11 @@ useHead({
       name: 'keywords',
       content: 'portfolio, quentin, robert, masutayunikon, epitech, epitech la réunion, développeur, web, fullstack, front, back, front-end, back-end, javascript, vuejs, nuxtjs, nodejs, php, html, css, scss, c, c++, blender, threejs, github, gitlab, discord, gmail, outlook'
     }
-  ]
+  ],
+})
+
+definePageMeta({
+  middleware: ['cache-control']
 })
 
 const repositories = await fetch('https://api.github.com/users/Masutayunikon/repos', {

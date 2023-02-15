@@ -7,10 +7,14 @@ export default defineNuxtConfig({
         '@/assets/css/global.scss'
     ],
 
-    modules: ['nuxt-icon'],
+    modules: [
+        'nuxt-icon',
+    ],
 
     nitro: {
         compressPublicAssets: true,
     },
+
+
 
 })
