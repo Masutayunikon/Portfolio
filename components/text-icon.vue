@@ -20,7 +20,7 @@ interface Props {
   isMail?: boolean;
 }
 
-const props = defineProps<Props>();
+defineProps<Props>();
 
 </script>
 

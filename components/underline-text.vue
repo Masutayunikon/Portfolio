@@ -13,7 +13,7 @@ interface Props {
   textColor: string;
 }
 
-const props = defineProps<Props>();
+defineProps<Props>();
 
 
 </script>

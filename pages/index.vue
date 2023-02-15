@@ -83,9 +83,6 @@ const repositories = await fetch('https://api.github.com/users/Masutayunikon/rep
   }).filter((obj : GitHubObject) => obj.name !== "Masutayunikon");
 });
 
-const test = () => {
-  console.log(repositories);
-}
 </script>
 
 <style scoped lang="scss">
@@ -194,28 +191,6 @@ const test = () => {
         align-items: center;
       }
     }
-
-    .container__project {
-      width: 100%;
-      justify-content: center;
-      align-items: center;
-      padding: 1em;
-      display: flex;
-      // add border box
-      .container__projects {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        padding: 1rem;
-        box-sizing: border-box;
-        .project {
-          width: 100%;
-        }
-      }
-    }
-
   }
 
   width: 100vw;

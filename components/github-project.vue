@@ -19,7 +19,7 @@ interface Props {
   html_url: string;
 }
 
-const props = defineProps<Props>();
+defineProps<Props>();
 
 const dateFormatted = (date: string) => {
   let dateObj = new Date(date);
