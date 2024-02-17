@@ -1,15 +1,18 @@
 <script setup lang="ts">
 
-const { pending, data, error, refresh } = await useFetch('/api/photos/files');
+const photos : Ref<{ file: string, location: string }[]> = ref([
+  {
+    file: 'GOPR0127.jpg',
+    location: 'Stockholm'
+  },
+  {
+    file: 'GOPR0131.jpg',
+    location: 'Stockholm'
+  },
+])
 
-const photos : Ref<string[]> = ref([])
-
-if (data.value) {
-  photos.value = data.value.files
-}
 
 console.log(photos.value)
-
 </script>
 
 <template>
@@ -79,10 +82,13 @@ console.log(photos.value)
     </div>
   </div>
   <div class="bg-gray-800 w-full flex items-center max-w-full flex-col">
-    <span class="w-full text-white font-bold text-3xl text-center">Mes photos prise avec ma go pro</span>
+    <span class="w-full text-white font-bold text-3xl text-center">Gallerie de photos</span>
     <div class="w-full flex justify-center items-center flex-wrap mt-10">
-      <div v-for="photo in photos" :key="photo" class="w-1/3 h-1/3 m-2.5">
-        <img src="~/assets/photos/GOPR0127.JPG" class="w-full h-full object-cover rounded-3xl" alt="photo"/>
+      <div v-for="photo in photos" :key="photo" class="max-w-lg max-h-lg aspect-square m-2.5 relative">
+        <!-- Span qui s'affiche en bas à droite -->
+        <span class="absolute bottom-2 left-2 font-bold p-1.5 rounded-3xl bg-amber-100">{{ photo.location }}</span>
+
+        <img :src="`/photos/${photo.file}`" class="w-full h-full object-cover rounded-3xl" alt="photo"/>
       </div>
     </div>
   </div>

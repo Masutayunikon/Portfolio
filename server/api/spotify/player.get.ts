@@ -83,8 +83,8 @@ export default defineEventHandler(async () => {
     try {
         const data = await response.json();
         console.log(data);
-        data.recentlyPlayed = false;
         return {
+            recentlyPlayed: false,
             body: data
         }
     } catch (e) {
@@ -107,9 +107,8 @@ export default defineEventHandler(async () => {
 
         const data = await response.json();
 
-        data.recentlyPlayed = true;
-
         return {
+            recentlyPlayed: true,
             body: data
         }
     }
