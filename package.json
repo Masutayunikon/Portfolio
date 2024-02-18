@@ -17,11 +17,11 @@
     "nuxt": "^3.10.1",
     "sass": "^1.70.0",
     "vue": "^3.4.15",
-    "vue-router": "^4.2.5"
-  },
-  "devDependencies": {
-    "@nuxtjs/color-mode": "^3.3.2",
+    "vue-router": "^4.2.5",
     "@nuxtjs/tailwindcss": "^6.11.3",
     "nuxt-icon": "^0.6.8"
+  },
+  "devDependencies": {
+
   }
 }
