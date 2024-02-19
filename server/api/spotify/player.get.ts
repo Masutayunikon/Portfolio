@@ -37,7 +37,7 @@ export default defineEventHandler(async () => {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
-                'Authorization': `Basic ${Buffer.from(`${runtimeConfig.public.SPOTIFY_CLIENT_ID}:${runtimeConfig.public.SPOTIFY_CLIENT_SECRET}`).toString('base64')}`
+                'Authorization': `Basic ${Buffer.from(`${runtimeConfig.public.spotifyClientId}:${runtimeConfig.public.spotifyClientSecret}`).toString('base64')}`
             },
             body: body.toString()
         });

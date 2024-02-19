@@ -29,7 +29,7 @@ export default defineEventHandler(async (event) => {
         });
     }
 
-    if (state !== runtimeConfig.public.STATE_SECRET) {
+    if (state !== runtimeConfig.public.state) {
         throw createError({
             statusCode: 400,
             message: 'Invalid state'
@@ -38,10 +38,10 @@ export default defineEventHandler(async (event) => {
 
     const body = new URLSearchParams();
 
-    body.append('client_id', runtimeConfig.public.GITHUB_CLIENT_ID);
-    body.append('client_secret', runtimeConfig.public.GITHUB_CLIENT_SECRET);
+    body.append('client_id', runtimeConfig.public.githubClientId);
+    body.append('client_secret', runtimeConfig.public.githubClientSecret);
     body.append('code', code as string);
-    body.append('redirect_uri', runtimeConfig.public.GITHUB_REDIRECT_URI);
+    body.append('redirect_uri', runtimeConfig.public.githubRedirectUri);
 
     const response = await fetch(url.toString(), {
         method: 'POST',
