@@ -31,7 +31,7 @@ export default defineEventHandler(async (event) => {
         });
     }
 
-    if (state !== runtimeConfig.public.state) {
+    if (state !== runtimeConfig.public.STATE_SECRET) {
         throw createError({
             statusCode: 400,
             message: 'Invalid state'
@@ -43,7 +43,7 @@ export default defineEventHandler(async (event) => {
 
 
     // set header authorization
-    const authorization = Buffer.from(`${runtimeConfig.public.spotifyClientId}:${runtimeConfig.public.spotifyClientSecret}`).toString('base64');
+    const authorization = Buffer.from(`${runtimeConfig.public.SPOTIFY_CLIENT_ID}:${runtimeConfig.public.SPOTIFY_CLIENT_SECRET}`).toString('base64');
 
     const headers = {
         'Content-Type': 'application/x-www-form-urlencoded',
@@ -55,7 +55,7 @@ export default defineEventHandler(async (event) => {
 
     body.append('grant_type', 'authorization_code');
     body.append('code', code as string);
-    body.append('redirect_uri', runtimeConfig.public.spotifyRedirectUri);
+    body.append('redirect_uri', runtimeConfig.public.SPOTIFY_REDIRECT_URI);
 
     const response = await fetch(url.toString(), {
         method: 'POST',
