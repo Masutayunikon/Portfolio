@@ -12,7 +12,7 @@ export default defineEventHandler(async (event) => {
 
     url.searchParams.append('scope', scopes.join(' '));
 
-    url.searchParams.append('state', runtimeConfig.public.state);
+    url.searchParams.append('state', runtimeConfig.public.stateSecret);
 
     await sendRedirect(event, url.toString(), 302);
 

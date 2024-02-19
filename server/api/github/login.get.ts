@@ -7,7 +7,7 @@ export default defineEventHandler(async (event) => {
     url.searchParams.append('client_id', runtimeConfig.public.githubClientId);
     url.searchParams.append('redirect_uri', runtimeConfig.public.githubRedirectUri);
     url.searchParams.append('scope', scopes.join(' '));
-    url.searchParams.append('state', runtimeConfig.public.state);
+    url.searchParams.append('state', runtimeConfig.public.stateSecret);
 
     await sendRedirect(event, url.toString(), 302);
 });

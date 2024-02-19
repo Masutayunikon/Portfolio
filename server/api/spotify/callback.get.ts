@@ -31,7 +31,7 @@ export default defineEventHandler(async (event) => {
         });
     }
 
-    if (state !== runtimeConfig.public.state) {
+    if (state !== runtimeConfig.public.stateSecret) {
         throw createError({
             statusCode: 400,
             message: 'Invalid state'

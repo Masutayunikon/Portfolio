@@ -8,7 +8,7 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
   runtimeConfig: {
     public: {
-      state: `${process.env.STATE_SECRET}`,
+      stateSecret: `${process.env.STATE_SECRET}`,
 
       spotifyClientId: `${process.env.SPOTIFY_CLIENT_ID}`,
       spotifyClientSecret: `${process.env.SPOTIFY_CLIENT_SECRET}`,
