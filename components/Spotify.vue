@@ -29,8 +29,6 @@ const changeGradient = () => {
     img.crossOrigin = "Anonymous";
     img.src = imageUrl;
 
-    imgUrl.value = imageUrl
-
     img.onload = () => {
       const color = colorThief.getPalette(img, 2);
 
@@ -49,6 +47,8 @@ const changeGradient = () => {
         spotifyWidget.value.style.setProperty('--before-gradient', linearGradientBefore.value)
         spotifyWidget.value.style.setProperty('--after-gradient', linearGradient.value)
         spotifyWidget.value.style.setProperty('--before-opacity', opacityBefore.value.toString())
+
+        imgUrl.value = imageUrl
 
       }
     }
@@ -147,11 +147,11 @@ onMounted(async () => {
     height: 100%;
     background: var(--before-gradient);
     opacity: var(--before-opacity);
-    transition: opacity 2s ease-in-out;
+    transition: opacity 0.7s ease-in-out;
   }
 
   .cover {
-    transition: background-image 2s ease-in-out;
+    transition: background-image 0.7s ease-in-out;
   }
 
   div > * {
