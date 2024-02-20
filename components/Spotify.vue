@@ -13,6 +13,8 @@ const linearGradientBefore = ref('linear-gradient(to bottom right, #1f2937, #1f2
 
 const opacityBefore = ref(0)
 
+const imgUrl = ref('')
+
 const isBefore = ref(true)
 
 const changeGradient = () => {
@@ -26,6 +28,8 @@ const changeGradient = () => {
     const img = new Image();
     img.crossOrigin = "Anonymous";
     img.src = imageUrl;
+
+    imgUrl.value = imageUrl
 
     img.onload = () => {
       const color = colorThief.getPalette(img, 2);
@@ -77,7 +81,7 @@ onMounted(async () => {
       <div v-if="!data.recentlyPlayed && data.body && data.body.currently_playing_type == 'episode'" class="w-full h-full flex flex-col">
         <div class="w-full h-3/4 flex">
           <div class="w-2/3 h-full">
-            <div class="cover w-full h-full rounded-3xl" :style="{ backgroundImage: `url(${data.body.item.album.images[0].url})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }"/>
+            <div class="cover w-full h-full rounded-3xl" :style="{ backgroundImage: `url(${imgUrl})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }"/>
           </div>
           <div class="w-1/3 h-2/3">
             <Icon name="logos:spotify-icon" class="text-white ml-5" size="40%"/>
@@ -91,7 +95,7 @@ onMounted(async () => {
       <div v-else-if="!data.recentlyPlayed && data.body" class="w-full h-full flex flex-col">
         <div class="w-full h-3/4 flex">
           <div class="w-2/3 h-full">
-            <div class="cover w-full h-full rounded-3xl" :style="{ backgroundImage: `url(${data.body.item.album.images[0].url})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }"></div>
+            <div class="cover w-full h-full rounded-3xl" :style="{ backgroundImage: `url(${imgUrl})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }"></div>
           </div>
           <div class="w-1/3 h-2/4">
             <Icon name="logos:spotify-icon" class="text-white ml-5" size="40%"/>
@@ -105,7 +109,7 @@ onMounted(async () => {
       <div v-else class="w-full h-full flex flex-col">
         <div class="w-full h-3/4 flex">
           <div class="w-2/3 h-full">
-            <div class="cover w-full h-full rounded-3xl" :style="{ backgroundImage: `url(${data.body.items[0].track.album.images[0].url})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }"></div>
+            <div class="cover w-full h-full rounded-3xl" :style="{ backgroundImage: `url(${imgUrl})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }"></div>
           </div>
           <div class="w-1/3 h-2/3">
             <Icon name="logos:spotify-icon" class="text-white ml-5" size="40%"/>
