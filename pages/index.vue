@@ -15,7 +15,7 @@ const photos : Ref<{ file: string, location: string }[]> = ref([
 
 <template>
   <main class="flex-col lg:flex-row flex w-full bg-gray-950">
-    <div class="lg:w-1/2 w-full flex justify-center flex-col items-center p-5">
+    <div class="lg:w-1/2 w-full flex justify-center flex-col items-center p-20">
       <img src="~/assets/image.jpg" class="p-5 rounded-full w-2/3 max-w-80 max-h-80" alt="profile picture">
       <span class="text-white text-2xl font-bold lg:text-3xl">Quentin ROBERT</span>
       <br>
