@@ -84,6 +84,6 @@ export default defineEventHandler(async (event) => {
     await useStorage().setItem('spotifyRefreshToken', refreshToken);
     await useStorage().setItem('spotifyExpiresAt', expiresAt);
 
-    await sendRedirect(event, 'http://localhost:3000', 302);
+    await sendRedirect(event, '/', 302);
 
 });
