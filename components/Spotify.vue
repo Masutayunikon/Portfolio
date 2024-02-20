@@ -16,8 +16,11 @@ const opacityBefore = ref(0)
 const isBefore = ref(true)
 
 const changeGradient = () => {
+
+  if (error.value) return
+
   if (data.value && data.value.body) {
-    const imageUrl = data.value.body.currently_playing_type == 'episode' ? data.value.body.item.images[0].url : data.value.body.item.album.images[0].url
+    const imageUrl = (data.value.recentlyPlayed) ? data.value.body.items[0].track.album.images[0].url : data.body.item.album.images[0].url
 
     const colorThief = new ColorThief();
 
