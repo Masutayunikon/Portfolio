@@ -43,7 +43,6 @@ export default defineEventHandler(async () => {
         });
 
         if (!response.ok) {
-            console.log(await response.json());
             throw createError({
                 statusCode: 400,
                 message: await response.json()
@@ -73,7 +72,6 @@ export default defineEventHandler(async () => {
     });
 
     if (!response.ok) {
-        console.log(await response.json());
         throw createError({
             statusCode: response.status,
             message: await response.json()
@@ -82,7 +80,6 @@ export default defineEventHandler(async () => {
 
     try {
         const data = await response.json();
-        console.log(data);
         return {
             recentlyPlayed: false,
             body: data
@@ -98,7 +95,6 @@ export default defineEventHandler(async () => {
         });
 
         if (!response.ok) {
-            console.log(await response.json(), response.status);
             throw createError({
                 statusCode: response.status,
                 message: await response.json()

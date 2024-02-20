@@ -16,7 +16,7 @@
               <div class="flex min-w-0 flex-1 justify-between space-x-4 pt-1.5">
                 <div>
                   <p class="text-sm text-white">
-                    {{ event.content }} <a :href="event.href" class="font-medium text-blue-800">{{ event.target }}</a>
+                    {{ event.content }} <a :href="event.href" class="font-medium text-blue-400">{{ event.target }}</a>
                   </p>
                 </div>
                 <div class="whitespace-nowrap text-right text-sm text-gray-300">
@@ -34,8 +34,6 @@
 const { pending, data, error, refresh } = await useFetch('/api/github/events');
 
 const timeline = ref([])
-
-
 
 
 const symbols = {
@@ -63,7 +61,7 @@ const formatDate = (date) => {
   return new Date(date).toLocaleDateString(undefined, options)
 }
 
-const getFeedItem = (event) => {
+const getFeedItem = async (event) => {
   const date = formatDate(event.created_at)
   const iconBackground = eventColor[event.type]
   const icon = symbols[event.type]
@@ -101,13 +99,14 @@ const getFeedItem = (event) => {
   // remove the login name in the target
   const target = event.repo.name.split('/')[1]
 
-  const href = event.payload.commits ? event.payload.commits[0].url : event.repo.html_url
+  const href = event.href
+
   return { date, iconBackground, icon, content, target, href }
 }
 
 if (data.value && data.value.body != null) {
   for (const event of data.value.body) {
-    timeline.value.push(getFeedItem(event));
+    timeline.value.push(await getFeedItem(event));
   }
 }
 

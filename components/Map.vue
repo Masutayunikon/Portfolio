@@ -134,8 +134,8 @@ onUnmounted(() => {
 <style scoped lang="scss">
 
 .map {
-  width: 90%;
-  height: 90%;
+  width: 100%;
+  height: 100%;
 }
 
 </style>
