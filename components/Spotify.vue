@@ -17,10 +17,9 @@ const isBefore = ref(true)
 
 const changeGradient = () => {
 
-  if (error.value) return
-
   if (data.value && data.value.body) {
-    const imageUrl = (data.value.recentlyPlayed) ? data.value.body.items[0].track.album.images[0].url : data.body.item.album.images[0].url
+
+    const imageUrl = (!data.value.recentlyPlayed) ? data.value.body.item.album.images[0].url : data.value.body.items[0].track.album.images[0].url
 
     const colorThief = new ColorThief();
 
@@ -144,11 +143,11 @@ onMounted(async () => {
     height: 100%;
     background: var(--before-gradient);
     opacity: var(--before-opacity);
-    transition: opacity 0.7s ease-in-out;
+    transition: opacity 2s ease-in-out;
   }
 
   .cover {
-    transition: background-image 0.7s ease-in-out;
+    transition: background-image 2s ease-in-out;
   }
 
   div > * {
